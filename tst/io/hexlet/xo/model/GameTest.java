@@ -1,10 +1,6 @@
 package io.hexlet.xo.model;
 
-import io.hexlet.xo.model.exceptions.InvalidGameNameException;
-import io.hexlet.xo.model.exceptions.InvalidPointException;
 import org.junit.jupiter.api.Test;
-
-import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +13,7 @@ class GameTest {
 
     @Test
     void getField() {
-        final Field expectedValue = new Field();
+        final Field expectedValue = new Field(3);
 
         final Game game = new Game(null, expectedValue, null);
 
