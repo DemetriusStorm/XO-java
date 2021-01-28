@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package "model" #DDDDDD {
+    package "exceptions" {
+      class XOException {}
+      class InvalidMoveException {}
+      class NoWinnerException {}
+    }
+  class Field {
+  + int getSize()
+  + Figure getFigure(Point point)
+  + void setFigure(Point point, Figure figure)
+  }
+  class Figure {}
+  class Game {
+  + Player[] getPlayers()
+  + Field getField()
+  + String getName()
+  }
+  class Player {
+    + String getName()
+    + Figure getFigure()
+  }
+}
+
+package "view" #DDDDDD {
+  class XOView {
+  + void show(Game game)
+  + void move(Game game)
+  }
+  interface ICoordinateGetter {}
+}
+
+package "controllers" #DDDDDD {
+  class MoveController {
+  + void {static} applyFigure(final Field field,
+                                final Point point,
+                                final Figure figure)
+  }
+  class WinnerController {
+  + Figure getWinner(Field field)
+  }
+  class CurrentMoveController {
+  + Figure currentMove(Field field)
+  }
+}
+
+@enduml
