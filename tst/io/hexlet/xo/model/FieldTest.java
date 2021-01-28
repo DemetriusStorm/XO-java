@@ -21,12 +21,11 @@ class FieldTest {
         final Field field = new Field();
         final Point inputPoint = new Point(0, 0);
         final Figure inputFigure = Figure.O;
-        final Figure expectedValue = inputFigure;
 
         field.setFigure(inputPoint, inputFigure);
         final Figure actualFigure = field.getFigure(inputPoint);
 
-        assertEquals(expectedValue, actualFigure);
+        assertEquals(inputFigure, actualFigure);
 
     }
 
