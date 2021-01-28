@@ -1,5 +1,7 @@
 package io.hexlet.xo.model;
 
+import io.hexlet.xo.model.exceptions.InvalidGameNameException;
+
 public class Game {
     private final Player[] players;
 
@@ -23,7 +25,10 @@ public class Game {
         return field;
     }
 
-    public String getName() {
+    public String getName() throws InvalidGameNameException {
+        if (this.name == null) {
+            throw new InvalidGameNameException();
+        }
         return name;
     }
 }
