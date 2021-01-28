@@ -40,7 +40,7 @@ class FieldTest {
         try {
             field.setFigure(inputPoint, inputFigure);
             fail();
-        } catch (final AlreadyOccupiedException e) {};
+        } catch (final AlreadyOccupiedException ignored) {}
 
     }
 
@@ -61,7 +61,7 @@ class FieldTest {
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {}
+        } catch (final InvalidPointException ignored) {}
     }
 
     @Test
@@ -71,7 +71,7 @@ class FieldTest {
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {}
+        } catch (final InvalidPointException ignored) {}
     }
 
     @Test
@@ -81,7 +81,7 @@ class FieldTest {
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {}
+        } catch (final InvalidPointException ignored) {}
     }
 
     @Test
@@ -91,6 +91,6 @@ class FieldTest {
         try {
             field.getFigure(inputPoint);
             fail();
-        } catch (final InvalidPointException e) {}
+        } catch (final InvalidPointException ignored) {}
     }
 }
