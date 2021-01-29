@@ -49,8 +49,10 @@ public class ConsoleView {
             System.out.println("No winner and no moves left!");
             return false;
         }
+
         System.out.format("Please enter move point for %s.\n", currentFigure);
         final Point point = askPoint();
+
         try {
             moveController.applyFigure(field, point, currentFigure);
         } catch (InvalidPointException | AlreadyOccupiedException e) {
@@ -87,7 +89,6 @@ public class ConsoleView {
                 e.printStackTrace();
                 throw new RuntimeException(e);
             }
-
             System.out.print(figure != null ? figure : " ");
             System.out.print(" ");
         }
